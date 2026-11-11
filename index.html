@@ -8,10 +8,12 @@
     <style>
         :root {
             --bg: #080b12;
-            --card: rgba(18, 24, 38, 0.9);
+            --card: rgba(18, 24, 38, 0.92);
             --border: rgba(255, 255, 255, 0.08);
             --text: #ffffff;
-            --muted: #9ca3af;
+            --accent1: #2563eb;
+            --accent2: #4f46e5;
+            --accent3: #7c3aed;
         }
 
         * {
@@ -25,11 +27,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: "Segoe UI", sans-serif;
             background:
                 radial-gradient(circle at top, #1c2742 0%, transparent 45%),
                 radial-gradient(circle at bottom right, #10203d 0%, transparent 35%),
                 #080b12;
-            font-family: "Segoe UI", sans-serif;
             color: var(--text);
         }
 
@@ -45,18 +47,23 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.08);
         }
 
-        h1 {
+        .title-link {
+            display: block;
             text-align: center;
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             font-weight: 700;
             letter-spacing: 2px;
-            margin: 22px;
+            margin-bottom: 35px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.25s ease;
         }
 
-        p {
-            text-align: center;
-            color: var(--muted);
-            margin-bottom: 40px;
+        .title-link:hover {
+            color: #8ab4ff;
+            text-shadow:
+                0 0 12px rgba(96, 165, 250, 0.6),
+                0 0 24px rgba(96, 165, 250, 0.35);
         }
 
         .buttons {
@@ -68,23 +75,26 @@
         .btn {
             position: relative;
             overflow: hidden;
+
+            display: block;
+            padding: 18px;
+            text-align: center;
             text-decoration: none;
+
             color: white;
             font-size: 1.05rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            text-align: center;
-            padding: 18px;
+            letter-spacing: 0.6px;
+
             border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
 
             background: linear-gradient(
                 135deg,
-                #2563eb,
-                #4f46e5,
-                #7c3aed
+                var(--accent1),
+                var(--accent2),
+                var(--accent3)
             );
-
-            border: 1px solid rgba(255,255,255,0.12);
 
             transition:
                 transform 0.25s ease,
@@ -96,14 +106,16 @@
             content: "";
             position: absolute;
             inset: 0;
+
             background: linear-gradient(
                 120deg,
                 transparent 0%,
-                rgba(255,255,255,0.18) 45%,
+                rgba(255, 255, 255, 0.2) 50%,
                 transparent 100%
             );
+
             transform: translateX(-120%);
-            transition: transform 0.7s ease;
+            transition: transform 0.8s ease;
         }
 
         .btn:hover::before {
@@ -112,10 +124,11 @@
 
         .btn:hover {
             transform: translateY(-4px);
-            border-color: rgba(255,255,255,0.25);
+            border-color: rgba(255, 255, 255, 0.25);
+
             box-shadow:
                 0 12px 35px rgba(79, 70, 229, 0.5),
-                0 0 25px rgba(99, 102, 241, 0.35);
+                0 0 30px rgba(99, 102, 241, 0.35);
         }
 
         .btn:active {
@@ -126,9 +139,16 @@
 <body>
 
     <div class="container">
-        <h1>tj-db</h1>
+
+        <a href="https://github.com/tj-db"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="title-link">
+            tj-db
+        </a>
 
         <div class="buttons">
+
             <a class="btn"
                href="https://tj-db.github.io/root/lib"
                target="_blank"
@@ -142,7 +162,9 @@
                rel="noopener noreferrer">
                 ESL Library
             </a>
+
         </div>
+
     </div>
 
 </body>
