@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tj-db lib</title>
+
+    <style>
+        :root {
+            --bg: #080b12;
+            --card: rgba(18, 24, 38, 0.9);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #ffffff;
+            --muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                radial-gradient(circle at top, #1c2742 0%, transparent 45%),
+                radial-gradient(circle at bottom right, #10203d 0%, transparent 35%),
+                #080b12;
+            font-family: "Segoe UI", sans-serif;
+            color: var(--text);
+        }
+
+        .container {
+            width: min(500px, 92vw);
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 50px 35px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+            padding: 18px;
+            border-radius: 16px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #4f46e5,
+                #7c3aed
+            );
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                120deg,
+                transparent 0%,
+                rgba(255,255,255,0.18) 45%,
+                transparent 100%
+            );
+            transform: translateX(-120%);
+            transition: transform 0.7s ease;
+        }
+
+        .btn:hover::before {
+            transform: translateX(120%);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.25);
+            box-shadow:
+                0 12px 35px rgba(79, 70, 229, 0.5),
+                0 0 25px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>tj-db lib</h1>
+
+        <div class="buttons">
+            <a class="btn"
+               href="https://tj-db.github.io/root/lib"
+               target="_blank"
+               rel="noopener noreferrer">
+                Script Library
+            </a>
+
+            <a class="btn"
+               href="https://tj-db.github.io/root/ESL/lib"
+               target="_blank"
+               rel="noopener noreferrer">
+                ESL Library
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
